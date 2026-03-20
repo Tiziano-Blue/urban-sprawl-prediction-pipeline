@@ -1,0 +1,12 @@
+Urban Expansion Tutorial Summary
+Timestamp: 2026-03-20T17:04:21
+Model predicts probability of urban expansion for non-built pixels in 2024.
+Training stage: candidate=Built_2000==0, Y is non-built(2000)->built(2010), X=[distance_to_built_2000, distance_to_roads].
+Validation stage: apply trained model to 2010->2024 transition with same feature order.
+Prediction stage: apply trained model to 2024 candidates for 2030 probability map.
+Validation ROC-AUC: 0.8627890957453193
+Validation Precision / Recall / F1: 0.06225385923244365 / 0.7680994417869614 / 0.11517303409722116
+Selected threshold: 0.3387434780597687
+Candidate pixels (Built_2024==0): 6839168
+Predicted high-risk pixels: 691648
+Prediction outputs are probability-based (continuous values in pred_prob_2030.tif).

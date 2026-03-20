@@ -1,0 +1,54 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python cache / test cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+*_venv/
+
+# Local notebooks/runtime artifacts
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.log
+
+# Derived data not required for source control
+data/derived/
+data/raw/pop_density.tif
+
+# Pipeline outputs: keep only final tutorial outputs in repo root outputs/
+outputs/*
+!outputs/final_validation_confusion_map.png
+!outputs/final_prediction_probability_map.png
+!outputs/final_high_risk_map.png
+!outputs/pred_prob_2030.tif
+!outputs/model_xgb.json
+!outputs/metrics_report.json
+!outputs/final_summary.txt
+
+# Never track intermediate/debug outputs
+outputs/intermediate/
+outputs_smoke/
+
+# Legacy duplicate metrics/debug artifacts
+outputs/metrics.json
+outputs/metrics_train.json
+outputs/metrics_spatial_cv.json
+outputs/probability_summary.txt
+outputs/training_config.json
+outputs/pred_prob_future.tif
+outputs/training_concept.png
+outputs/observed_urban_expansion_2010_2024.png
+outputs/feature_importance.csv
+outputs/shap_importance.csv

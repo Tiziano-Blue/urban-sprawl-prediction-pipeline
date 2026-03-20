@@ -1,0 +1,184 @@
+{
+  "timestamp": "2026-03-20T17:04:21",
+  "pipeline": {
+    "mode": "sequential_stages",
+    "stages": [
+      "training",
+      "validation",
+      "prediction"
+    ],
+    "feature_order": [
+      "distance_to_built",
+      "distance_to_roads"
+    ],
+    "training_candidate": "Built_2000 == 0",
+    "prediction_candidate": "Built_2024 == 0"
+  },
+  "train_metrics": {
+    "roc_auc": 0.9004240689583356,
+    "pr_auc": 0.7462194453000643,
+    "precision": 0.6899526333950249,
+    "recall": 0.8899813870680586,
+    "f1": 0.7773046136447971,
+    "confusion_matrix": [
+      [
+        39544,
+        9884
+      ],
+      [
+        2719,
+        21995
+      ]
+    ]
+  },
+  "validation_metrics": {
+    "roc_auc": 0.8627890957453193,
+    "pr_auc": 0.07532669045482215,
+    "precision": 0.06225385923244365,
+    "recall": 0.7680994417869614,
+    "f1": 0.11517303409722116,
+    "confusion_matrix": [
+      [
+        5471917,
+        1361764
+      ],
+      [
+        27294,
+        90403
+      ]
+    ]
+  },
+  "thresholds": {
+    "selected_threshold_f1": 0.3387434780597687,
+    "high_risk_quantile": 0.9,
+    "high_risk_probability_cutoff": 0.3554999828338623
+  },
+  "spatial_cv": {
+    "n_splits": 5,
+    "block_size": 64,
+    "folds": [
+      {
+        "roc_auc": 0.9021905747440535,
+        "pr_auc": 0.7577906943148305,
+        "precision": 0.7676474527838549,
+        "recall": 0.6985616772306192,
+        "f1": 0.7314769512221064,
+        "confusion_matrix": [
+          [
+            44326,
+            5204
+          ],
+          [
+            7419,
+            17193
+          ]
+        ],
+        "fold": 1,
+        "n_train": 296568,
+        "n_test": 74142
+      },
+      {
+        "roc_auc": 0.9077902305745857,
+        "pr_auc": 0.7595940442690532,
+        "precision": 0.7590376674812506,
+        "recall": 0.7502498750624688,
+        "f1": 0.7546181879110292,
+        "confusion_matrix": [
+          [
+            44411,
+            5719
+          ],
+          [
+            5997,
+            18015
+          ]
+        ],
+        "fold": 2,
+        "n_train": 296568,
+        "n_test": 74142
+      },
+      {
+        "roc_auc": 0.8985637795013394,
+        "pr_auc": 0.760530200828126,
+        "precision": 0.7591524573721163,
+        "recall": 0.7236186909931084,
+        "f1": 0.740959800942261,
+        "confusion_matrix": [
+          [
+            43276,
+            5763
+          ],
+          [
+            6938,
+            18165
+          ]
+        ],
+        "fold": 3,
+        "n_train": 296568,
+        "n_test": 74142
+      },
+      {
+        "roc_auc": 0.9067989423140688,
+        "pr_auc": 0.7634021290244066,
+        "precision": 0.7654885829415715,
+        "recall": 0.7395377128953772,
+        "f1": 0.7522894150647637,
+        "confusion_matrix": [
+          [
+            43895,
+            5587
+          ],
+          [
+            6423,
+            18237
+          ]
+        ],
+        "fold": 4,
+        "n_train": 296568,
+        "n_test": 74142
+      },
+      {
+        "roc_auc": 0.9171273905883744,
+        "pr_auc": 0.7858826382930555,
+        "precision": 0.779149628806225,
+        "recall": 0.7793352658539491,
+        "f1": 0.7792424362741206,
+        "confusion_matrix": [
+          [
+            43396,
+            5563
+          ],
+          [
+            5557,
+            19626
+          ]
+        ],
+        "fold": 5,
+        "n_train": 296568,
+        "n_test": 74142
+      }
+    ],
+    "mean_metrics": {
+      "roc_auc": 0.9064941835444843,
+      "pr_auc": 0.7654399413458943,
+      "precision": 0.7660951578770037,
+      "recall": 0.7382606444071046,
+      "f1": 0.7517173582828562
+    },
+    "std_metrics": {
+      "roc_auc": 0.00626498307810617,
+      "pr_auc": 0.010381209777845304,
+      "precision": 0.007364862861706588,
+      "recall": 0.026917993525856033,
+      "f1": 0.016073400995680057
+    }
+  },
+  "counts": {
+    "train_positive_full": 123570,
+    "train_negative_full": 6948618,
+    "train_positive_sampled": 123570,
+    "train_negative_sampled": 247140,
+    "prediction_candidate_pixels": 6839168,
+    "prediction_high_risk_pixels": 691648
+  }
+}

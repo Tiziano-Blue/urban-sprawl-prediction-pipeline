@@ -1,0 +1,38 @@
+project:
+  random_state: 42
+  output_dir: outputs
+
+data:
+  # Primary data directory inside this repository (recommended for tutorial reproducibility).
+  real_data_dir: data/raw
+  file_names:
+    landuse2000: landuse2000.tif
+    landuse2010: landuse2010.tif
+    landuse2024: landuse2024.tif
+    roads: roads.tif
+    distance2000: distance2000.tif
+    distance2010: distance2010.tif
+    distance2024: distance2024.tif
+
+sampling:
+  # Negatives sampled as: min(total_negatives, negative_multiplier * positives)
+  negative_multiplier: 2
+
+model:
+  early_stopping_rounds: 20
+  xgb_params:
+    n_estimators: 200
+    max_depth: 5
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+    tree_method: hist
+    objective: binary:logistic
+    eval_metric: auc
+    n_jobs: 4
+
+validation:
+  spatial_cv_block_size: 64
+
+prediction:
+  high_risk_quantile: 0.9
