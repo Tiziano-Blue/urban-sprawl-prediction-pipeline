@@ -47,6 +47,7 @@ def test_cleanup_removes_obsolete_outputs(tmp_path: Path):
 
 def test_main_output_contract_is_minimal():
     assert set(MAIN_IMAGE_OUTPUTS) == {
+        "observed_urban_expansion_2010_2024.png",
         "final_validation_confusion_map.png",
         "final_prediction_probability_map.png",
         "final_high_risk_map.png",
@@ -57,3 +58,4 @@ def test_main_output_contract_is_minimal():
         "metrics_report.json",
         "final_summary.txt",
     }
+    assert "observed_urban_expansion_2010_2024.png" not in OBSOLETE_MAIN_OUTPUTS

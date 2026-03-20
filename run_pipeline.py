@@ -35,6 +35,7 @@ from src.prediction import (
 )
 from src.sampling import balanced_sample, prepare_training_data, validate_training_inputs
 from src.visualization import (
+    save_observed_expansion_map,
     save_final_high_risk_map,
     save_final_prediction_probability_map,
     save_final_validation_confusion_map,
@@ -51,6 +52,7 @@ DEFAULT_FILE_NAMES = {
 }
 
 MAIN_IMAGE_OUTPUTS = [
+    "observed_urban_expansion_2010_2024.png",
     "final_validation_confusion_map.png",
     "final_prediction_probability_map.png",
     "final_high_risk_map.png",
@@ -65,7 +67,6 @@ MAIN_RESULT_OUTPUTS = [
 
 OBSOLETE_MAIN_OUTPUTS = [
     "training_concept.png",
-    "observed_urban_expansion_2010_2024.png",
     "pred_prob_future.tif",
     "metrics_train.json",
     "metrics_spatial_cv.json",
@@ -405,6 +406,13 @@ def main() -> None:
     built_2010 = layers["landuse2010"].array
     built_2024 = layers["landuse2024"].array
     roads = layers["roads"].array
+
+    print("\n[Preparation] Building observed expansion map (2010 -> 2024)...")
+    save_observed_expansion_map(
+        built_base=built_2010,
+        built_next=built_2024,
+        path=output_dir / "observed_urban_expansion_2010_2024.png",
+    )
 
     print("\n[Preparation] Computing required distance rasters...")
     distances = compute_required_distances(built_2000=built_2000, built_2024=built_2024, roads=roads)
