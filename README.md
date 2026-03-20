@@ -5,7 +5,6 @@ A clean, reproducible XGBoost workflow for **transition-based urban expansion pr
 ## Overview
 
 This project models **urban expansion as land conversion**, rather than static land classification.  
-2010?
 
 The workflow is organized into three conceptual stages:
 
