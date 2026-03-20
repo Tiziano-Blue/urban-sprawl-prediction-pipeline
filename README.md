@@ -6,9 +6,6 @@ Clean, reproducible tutorial repository for transition-based urban expansion pre
 
 This is a **transition model**, not a static land classification model.
 
-Research question:
-Among pixels that were non-built in 2000, which became built by 2010?
-
 - Candidate space (training): `Built_2000 == 0`
 - Target `Y`:
   - `1`: non-built(2000) -> built(2010)
