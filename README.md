@@ -4,9 +4,6 @@ A clean, reproducible XGBoost workflow for **transition-based urban expansion pr
 
 ## Overview
 
-This project models **urban expansion as land conversion**, not static land classification.
-
-Research question:
 Among pixels that were non-built in 2000, which became built by 2010?
 
 - Candidate space (training): `Built_2000 == 0`
